@@ -1,8 +1,12 @@
 package org.example.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import org.example.embed.FullName;
+@Entity
 
 public class Student {
+    @Id
     private int id;
     private FullName name;
     private String address;
