@@ -16,12 +16,13 @@ public class Main {
         Student student = new Student();
         student.setId(1);
         student.setName(fullName);
-        student.setAddress("Minuwangoda");  // Update address Gampaha to Minuwangoda
+        student.setAddress("Gampaha");
 
         //Open the Transaction
         Transaction transaction = session.beginTransaction();
-        /*session.save(student);*/
-        session.update(student);
+        /*session.save(student);*/  // save done
+       /* session.update(student);*/ //update done
+        session.delete("1",student); //delete done
         transaction.commit();
         session.close();
     }
