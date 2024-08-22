@@ -12,18 +12,20 @@ public class Main {
     public static void main(String[] args) {
         Session session = FactoryConfiguration.getInstance().getSession();
 
-        FullName fullName = new FullName("Nipun", "Prabushitha");
+        FullName fullName = new FullName("Tashini", "Madubhani");
         Student student = new Student();
-        student.setId(1);
+        student.setId(3);
         student.setName(fullName);
-        student.setAddress("Gampaha");
+        student.setAddress("Mathugama");
 
         //Open the Transaction
         Transaction transaction = session.beginTransaction();
         /*session.save(student);*/  // save done
        /* session.update(student);*/ //update done
-        session.delete("1",student); //delete done
+        /*session.delete("1",student);*/ //delete done
+        Student student1 = session.get(Student.class, 3);//get done
         transaction.commit();
+        System.out.println(student1);
         session.close();
     }
 }
